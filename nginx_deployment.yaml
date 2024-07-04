@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment  # Change this to your desired deployment name
 spec:
-  replicas: 1  # Number of Nginx pods to run
+  replicas: 10  # Number of Nginx pods to run
   selector:
     matchLabels:
       app: nginx  # Label for pods managed by the deployment
