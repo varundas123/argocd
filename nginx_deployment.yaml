@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment  # Change this to your desired deployment name
+spec:
+  replicas: 2  # Number of Nginx pods to run
+  selector:
+    matchLabels:
+      app: nginx  # Label for pods managed by the deployment
+  template:
+    metadata:
+      labels:
+        app: nginx  # Matches the selector label
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest  # You can specify a different image version here
+        ports:
+        - containerPort: 80  # Nginx listens on port 80 by default
